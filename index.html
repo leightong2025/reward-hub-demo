@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Reward Hub — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="container">
+    <header class="header">
+      <div>
+        <h1>Reward Hub</h1>
+        <p class="subtitle">500,000 pts = $20 — Clean iOS Minimal</p>
+      </div>
+      <div class="balance" id="balance">0 pts</div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Play Games (Simulated)</h2>
+        <div id="offers" class="offers"></div>
+      </section>
+
+      <section class="card">
+        <h2>Built-in Mini Games</h2>
+        <div class="mini-grid">
+          <button class="mini" id="scratchBtn">Scratch Card +100K</button>
+          <button class="mini" id="spinBtn">Spin Wheel +50K</button>
+          <button class="mini" id="adBtn">Watch Ad +50K (Sim)</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Cash Out</h2>
+        <div class="cashout">
+          <label>PayPal email</label>
+          <input id="paypalEmail" type="email" placeholder="you@paypal.com" />
+          <label>Amount ($)</label>
+          <input id="cashAmt" type="number" min="1" placeholder="5.00" />
+          <button id="requestCash" class="primary">Request Cashout (Simulated)</button>
+          <p class="muted">This demo does not send real money. Use a server + PayPal Payouts to pay real users.</p>
+        </div>
+        <div>
+          <h3>Pending Requests</h3>
+          <ul id="pendingList" class="pending"></ul>
+        </div>
+      </section>
+
+      <section class="card small">
+        <div class="row">
+          <div>Rate</div>
+          <div>500,000 pts = $20</div>
+        </div>
+        <div class="row">
+          <div>Demo Mode</div>
+          <button id="resetBtn" class="danger">Reset Demo</button>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <!-- Simulated full-screen play modal -->
+    <div id="playModal" class="modal hidden">
+      <div class="modal-inner">
+        <h3 id="playTitle">Playing</h3>
+        <div id="playTimer" class="timer">0s</div>
+        <div class="modal-actions">
+          <button id="stopPlay" class="primary">Stop & Claim</button>
+        </div>
+        <p class="muted small">In production this would open the external app or App Store and track time away; here we simulate time played.</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <small>Made by Clara-style demo • Not for production payouts</small>
+    </footer>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
